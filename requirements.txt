@@ -1,0 +1,6 @@
+# Note: there is no need to install the "jupyter" metapackage because all the needed
+# pieces for nbgrader functionality are already installed by the bootstraped image.
+nbgrader==0.6.1
+# Add RISE to the mix as well so user can show live slideshows from their notebooks
+rise==5.6.1
+
