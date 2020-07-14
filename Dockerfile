@@ -1,4 +1,4 @@
-FROM jupyter/base-notebook
+FROM jupyter/datascience-notebook:5197709e9f23
 
 # Add RUN statements to install packages as the $NB_USER defined in the base images.
 
@@ -7,3 +7,8 @@ FROM jupyter/base-notebook
 
 # If you do switch to root, always be sure to add a "USER $NB_USER" command at the end of the
 # file to ensure the image runs as a unprivileged user by default.
+
+# Install the extra packages and enable the extensions we need
+ADD requirements.txt .
+RUN pip install --no-cache --no-cache-dir -r requirements.txt #&& \
+    #rm -fr ~/.cache/pip requirements.txt Dockerfile .venv
